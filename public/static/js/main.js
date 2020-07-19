@@ -30,8 +30,8 @@
 	// loader
 	var loader = function() {
 		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
+			if($('#lpweb-loader').length > 0) {
+				$('#lpweb-loader').removeClass('show');
 			}
 		}, 1);
 	};
@@ -49,7 +49,7 @@
 
 			event.preventDefault();
 
-			if ( $('#ftco-nav').is(':visible') ) {
+			if ( $('#lpweb-nav').is(':visible') ) {
 				$(this).removeClass('active');
 			} else {
 				$(this).addClass('active');	
@@ -66,7 +66,7 @@
 	var onePageClick = function() {
 
 
-		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
+		$(document).on('click', '#lpweb-nav a[href^="#"]', function (event) {
 	    event.preventDefault();
 
 	    var href = $.attr(this, 'href');
@@ -177,9 +177,9 @@
 
 	var counter = function() {
 		
-		$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
+		$('#section-counter, .hero-wrap, .lpweb-counter, .lpweb-about').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+			if( direction === 'down' && !$(this.element).hasClass('lpweb-animated') ) {
 
 				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
 				$('.number').each(function(){
@@ -204,27 +204,27 @@
 
 	var contentWayPoint = function() {
 		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
+		$('.lpweb-animate').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+			if( direction === 'down' && !$(this.element).hasClass('lpweb-animated') ) {
 				
 				i++;
 
 				$(this.element).addClass('item-animate');
 				setTimeout(function(){
 
-					$('body .ftco-animate.item-animate').each(function(k){
+					$('body .lpweb-animate.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
 							var effect = el.data('animate-effect');
 							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
+								el.addClass('fadeIn lpweb-animated');
 							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
+								el.addClass('fadeInLeft lpweb-animated');
 							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
+								el.addClass('fadeInRight lpweb-animated');
 							} else {
-								el.addClass('fadeInUp ftco-animated');
+								el.addClass('fadeInUp lpweb-animated');
 							}
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
